@@ -29,25 +29,29 @@ const CardItem = styled("div")({
 });
 
 const Dashboard = () => {
-  return AllCardData.map((cardData) => (
-    <Grid key={cardData.Title} item xs>
-      <CustomCard>
-        <CardItem>
-          <IconDiv style={{ background: cardData.bgColor }}>
-            <Image src={cardData.Icon}></Image>
-          </IconDiv>
-          <div>
-            <Typography color="secondary" sx={{ marginTop: "3px" }}>
-              <small>{cardData.Title}</small>
-            </Typography>
-            <CustomTypography style={{ color: cardData.color }}>
-              {cardData.count}
-            </CustomTypography>
-          </div>
-        </CardItem>
-      </CustomCard>
-    </Grid>
-  ));
+  return (
+    <>
+      {AllCardData.map((cardData) => (
+        <Grid key={cardData.Title} item xs>
+          <CustomCard>
+            <CardItem>
+              <IconDiv style={{ background: cardData.bgColor }}>
+                <Image src={cardData.Icon}></Image>
+              </IconDiv>
+              <div>
+                <Typography color="secondary" sx={{ marginTop: "3px" }}>
+                  <small>{cardData.Title}</small>
+                </Typography>
+                <CustomTypography style={{ color: cardData.color }}>
+                  {cardData.count}
+                </CustomTypography>
+              </div>
+            </CardItem>
+          </CustomCard>
+        </Grid>
+      ))}
+    </>
+  );
 };
 
 export default Dashboard;
